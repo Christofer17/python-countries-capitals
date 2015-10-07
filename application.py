@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 from collections import OrderedDict
 import os
 import sys
@@ -13,7 +15,7 @@ Capital = []
 
 
 def question():
-    var3=raw_input("-You want to enter another country with capital? YES or NO: " )
+    var3=raw_input(u"-You want to enter another country with capital? YES or NO: " )
     var3=var3.lower()
     if var3 == "y" or var3 == "yes" or var3 == "YES" or var3 == "Yes":
         Insert_Country()
@@ -29,7 +31,7 @@ def Insert_Country():
     mas = True
     while mas == True:
         var1 =raw_input("Enter the Country: ")
-        if var1.isalpha() or " " in var1:
+        if var1.isalpha() or " " in var1 or "ñ" in var1 or "ú" in var1 or "á" in var1 or "é" in var1 or "í" in var1 or "ó" in var1:
         	var1 = var1.capitalize()
         	Country.append(var1)
         	mas = False
@@ -38,12 +40,12 @@ def Insert_Country():
             mas = True
     while mas == False:
         var2 =raw_input("Enter the Capital: ")
-        if var2.isalpha() or " " in var2:
+        if var2.isalpha() or " " in var2 or "ñ" in var2 or "ú" in var2 or "á" in var2 or "é" in var2 or "í" in var2 or "ó" in var2:
         	var2 = var2.capitalize()
         	Capital.append(var2)
         	mas = True
         else:
-            print "only words"
+            print "Only Words"
             mas = False
     
     al[var1]=var2
